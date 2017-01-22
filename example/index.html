@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>React TextField</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script src="//unpkg.com/react@15/dist/react.min.js"></script>
+    <script src="//unpkg.com/react-dom@15/dist/react-dom.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.29/browser.min.js"></script>
+    <script src="../dist/react-textfield.js"></script>
+    <script type="text/babel">
+        var ReactTextField = ReactTextField;    
+        var App = React.CreateClass({
+          render: function {
+            const errors = [
+              { 
+                message: "You should input 6 - 12 charactors.",
+                validator: (str) => {
+                  return validator.isLength(str, { min: 6, max: 12 });
+                }
+              }
+            ];
+            return (
+              <div>
+                <h1>React Text Field</h1>
+                <ReactTextField 
+                  successMessage="This username is valid"
+                  erros={errors}
+                />
+              </div>
+            )
+          }
+        });
+        ReactDOM.render(<App/>, document.getElementById('app'));
+    </script>
+  </body>
+</html>

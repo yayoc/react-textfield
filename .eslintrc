@@ -1,0 +1,21 @@
+{
+  parser: "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true,
+    "mocha": true,
+    "amd": true
+  },
+  "rules": {
+    "func-names": 0,
+    "arrow-body-style": 0,
+    "no-param-reassign": [2, {
+      "props": false
+    }]
+  },
+  "settings": {
+    "import/resolver": "node"
+  }
+
+}
