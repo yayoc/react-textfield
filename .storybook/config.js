@@ -8,9 +8,7 @@ addDecorator((story) => {
 });
 
 function loadStories() {
-  require('../stories/DateRangePicker');
-  require('../stories/SingleDatePicker');
-  require('../stories/DayPicker');
+  require('../stories/TextField');
 }
 
 setAddon(infoAddon);

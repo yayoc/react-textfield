@@ -4,9 +4,8 @@
   "description": "Elegant text filed of React Component.",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && npm run build:js && npm run build:css",
+    "build": "npm run clean && npm run build:js",
     "build:js": "babel src/ -d lib/ --ignore src/components",
-    "build:css": "node-sass css/styles.scss lib/css/_textfield.css",
     "clean": "rimraf lib",
     "storybook": "start-storybook -p 9001 -s ./public"
   },
@@ -26,16 +25,13 @@
   "devDependencies": {
     "@kadira/react-storybook-addon-info": "^3.3.0",
     "@kadira/storybook": "^2.35.2",
-    "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "^1.0.1",
-    "sass-loader": "^4.0.2",
-    "style-loader": "^0.13.1",
     "babel-cli": "^6.18.0",
     "babel-core": "^6.20.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.9",
     "babel-preset-es2015": "^6.18.0",
     "babel-preset-react": "^6.16.0",
+    "css-loader": "^0.26.1",
     "eslint": "^3.12.0",
     "eslint-config-airbnb": "^13.0.0",
     "eslint-import-resolver-node": "^0.2.3",
@@ -43,15 +39,18 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^2.0.1",
     "eslint-plugin-react": "^6.8.0",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "jest": "^18.1.0",
     "moment": "^2.17.1",
     "node-sass": "^3.13.1",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2",
+    "postcss-loader": "^1.2.2",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react-dom": "^15.4.1",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.14.0",
+    "webpack-dev-server": "^1.16.2"
   },
-  "precommit": [
-  ],
-  "dependencies": {
-  }
+  "precommit": [],
+  "dependencies": {}
 }

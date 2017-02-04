@@ -14,22 +14,26 @@ module.exports = [{
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'eslint-loader'
+        loader: 'eslint-loader',
       },
     ],
     loaders: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: "babel-loader"
-      }
-    ]
+        loader: 'babel-loader',
+      },
+      {
+        test: /\.css$/,
+        loader: 'style!css!postcss!',
+      },
+    ],
   },
   devServer: {
-    contentBase: "./dist",
+    contentBase: './dist',
     noInfo: true,
     hot: true,
     inline: true,
-    historyApiFallback: true
-  }
+    historyApiFallback: true,
+  },
 }];
