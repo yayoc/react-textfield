@@ -1,4 +1,4 @@
-import { length, isAlphanumeric, mustContainUpperCase, isEmail } from '../src/utils/validator';
+import { length, isAlphanumeric, mustContainUpperCase, isEmail, isURL } from '../src/utils/validator';
 
 export const usernameValidators = [
   {
@@ -30,6 +30,13 @@ export const emailValidators = [
   {
     message: 'Wrong email format.',
     validator: value => isEmail(value),
+  },
+];
+
+export const urlValidators = [
+  {
+    message: 'Wrong URL format.',
+    validator: value => isURL(value),
   },
 ];
 

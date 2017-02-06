@@ -16,7 +16,7 @@ const isEmail = (value) => {
   return re.test(value);
 };
 
-const isUrl = (value) => {
+const isURL = (value) => {
   const re = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
   return re.test(value);
 };
@@ -27,5 +27,5 @@ export {
   isAlphanumeric,
   mustContainUpperCase,
   isEmail,
-  isUrl,
+  isURL,
 };

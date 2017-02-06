@@ -123,7 +123,7 @@ A event handler of input text filed.
 **ValidateOnBlur:**
 Default value is false. When embedding true, validating will be occurred onBlur event only.
 
-### Validators
+### `Validators`
 
 **length:**
 Validate the length of value. The second args { min: integer, max: integer }.
@@ -167,6 +167,27 @@ render() {
 
 ### Style
 
+Passing **style props** make override default style by embedding inline style.
+Style object must be following format. 
+
+```js
+const style = {
+  container: {
+    textAlign: 'center',
+  },
+  input: {
+    margin: '30px',
+  },
+  successMessage: {
+    fontSize: '20px',
+    color: '#3949AB',
+  },
+  errorMessage: {
+    fontSize: '20px',
+    color: '#E91E63',
+  },
+};
+``` 
 
 
 

@@ -36,7 +36,7 @@ storiesOf('FormTextField', module)
   .addWithInfo('Sign in', () => (
     <FormWrapper>
       <TextFieldWrapper
-        label="Username"
+        label="Username (Validate on Blur)"
         name="username"
         type="text"
         placeholder="username"

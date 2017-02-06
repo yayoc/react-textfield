@@ -69,7 +69,10 @@ export default class ReactTextField extends React.Component {
 
   render() {
     return (
-      <div className="ReactTextField--container">
+      <div
+        className="ReactTextField--container"
+        style={this.props.style ? this.props.style.container : null}
+      >
         <input
           name={this.props.name}
           type={this.props.type}
@@ -78,13 +81,20 @@ export default class ReactTextField extends React.Component {
           onBlur={this.onBlur}
           onFocus={this.onFocus}
           placeholder={this.props.placeholder}
+          style={this.props.style ? this.props.style.input : null}
         />
         { this.state.isValid ?
-          <span className="ReactTextField-message ReactTextField--success">
+          <span
+            className="ReactTextField-message ReactTextField--success"
+            style={this.props.style ? this.props.style.successMessage : null}
+          >
             {this.props.successMessage}
           </span>
           :
-          <span className="ReactTextField-message ReactTextField--error">
+          <span
+            className="ReactTextField-message ReactTextField--error"
+            style={this.props.style ? this.props.style.errorMessage : null}
+          >
             {this.state.errorMessage}
           </span>
         }
@@ -124,6 +134,13 @@ ReactTextField.propTypes = {
 
   validateOnBlur: PropTypes.bool,
 
+  style: PropTypes.shape({
+    container: PropTypes.object,
+    input: PropTypes.object,
+    successMessage: PropTypes.object,
+    errorMessage: PropTypes.object,
+  }),
+
 };
 
 ReactTextField.defaultProps = {
@@ -132,5 +149,6 @@ ReactTextField.defaultProps = {
   placeholder: '',
   validators: [],
   validateOnBlur: false,
+  style: null,
 };
 
