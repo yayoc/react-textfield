@@ -9,6 +9,7 @@ addDecorator((story) => {
 
 function loadStories() {
   require('../stories/TextField');
+  require('../stories/FormTextField');
 }
 
 setAddon(infoAddon);

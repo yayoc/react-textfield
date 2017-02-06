@@ -18,13 +18,12 @@ export default class ReactTextField extends React.Component {
   }
 
   onChange(e) {
+    if (this.props.onChange) {
+      this.props.onChange(e, this.props.name);
+    }
     if (!this.props.validateOnBlur) {
       const value = e.target.value;
       this.validate(value);
-    }
-    // Execute callback function.
-    if (this.props.onChange) {
-      this.props.onChange(this.state.isValid);
     }
   }
 
@@ -35,13 +34,13 @@ export default class ReactTextField extends React.Component {
     }
 
     if (this.props.onBlur) {
-      this.props.onBlur(e);
+      this.props.onBlur(e, this.props.name);
     }
   }
 
   onFocus(e) {
     if (this.props.onFocus) {
-      this.prop.onFocus(e);
+      this.prop.onFocus(e, this.props.name);
     }
   }
 
@@ -61,13 +60,18 @@ export default class ReactTextField extends React.Component {
         break;
       }
     }
-    this.setState({ isValid, errorMessage });
+    this.setState({ isValid, errorMessage }, () => {
+      if (this.props.afterValidate) {
+        this.props.afterValidate(this.state.isValid, this.props.name);
+      }
+    });
   }
 
   render() {
     return (
       <div className="ReactTextField--container">
         <input
+          name={this.props.name}
           type={this.props.type}
           className="ReactTextField--input"
           onChange={this.onChange}
@@ -99,6 +103,8 @@ ReactTextField.propTypes = {
     'url',
   ]),
 
+  name: PropTypes.string.isRequired,
+
   placeholder: PropTypes.string,
 
   // Success message when validator passed.
@@ -110,6 +116,8 @@ ReactTextField.propTypes = {
     validator: PropTypes.func.isRequired,
   })),
 
+  afterValidate: PropTypes.func,
+
   onChange: PropTypes.func,
   onBlur: PropTypes.func,
   onFocus: PropTypes.func,
@@ -120,6 +128,7 @@ ReactTextField.propTypes = {
 
 ReactTextField.defaultProps = {
   type: 'text',
+  name: '',
   placeholder: '',
   validators: [],
   validateOnBlur: false,
