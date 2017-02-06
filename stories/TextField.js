@@ -35,14 +35,16 @@ storiesOf('TextField', module)
   .addWithInfo('default', () => (
     <TextFieldWrapper
       label="Username"
+      placeholder="username"
       validators={defaultValidators}
       successMessage="This Username is available."
     />
   ))
   .addWithInfo('Password type', () => (
     <TextFieldWrapper
-      label="Password"
       type="password"
+      label="Password"
+      placeholder="password"
       validators={passwordValidators}
       successMessage="This Password is valid."
     />
@@ -60,6 +62,14 @@ storiesOf('TextField', module)
   .addWithInfo('url type', () => (
     <TextFieldWrapper
       type="url"
+    />
+  ))
+  .addWithInfo('validate on Blur', () => (
+    <TextFieldWrapper
+      type="text"
+      validators={defaultValidators}
+      successMessage="This Username is available."
+      validateOnBlur={true}
     />
   ));
 
