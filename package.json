@@ -7,7 +7,8 @@
     "build": "npm run clean && npm run build:js",
     "build:js": "babel src/ -d lib/ --ignore src/components",
     "clean": "rimraf lib",
-    "storybook": "start-storybook -p 9001 -s ./public"
+    "storybook": "start-storybook -p 9001 -s ./public",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -40,7 +41,6 @@
     "eslint-plugin-jsx-a11y": "^2.0.1",
     "eslint-plugin-react": "^6.8.0",
     "extract-text-webpack-plugin": "^1.0.1",
-    "jest": "^18.1.0",
     "moment": "^2.17.1",
     "node-sass": "^3.13.1",
     "postcss-loader": "^1.2.2",
