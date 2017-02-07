@@ -43,16 +43,13 @@ npm install --save react-textfield
 import { TextField } from 'react-textfield';
 ```
 
-#### Include CSS
-Write later.
-
 #### Make some elegant textfield
 ```jsx
-<TextField
+<ReactTextField
   name="username"
   type="text"
   placeholder="username"
-  validators={defaultValidators}
+  validators={usernameValidators}
   successMessage="This Username is available."
 />
 ```
@@ -83,14 +80,14 @@ type: PropTypes.oneOf([
 
 **Name:**
 This props will pass as a name attribute of Input tag.  
-If you are using multiple components, This props must be unique.
+**If you are using multiple components, This props must be unique.**
 
 **Validators:**
-This props is array of validator object which contains both error message and handler as properties.  
-Args of the handler is string value ( text field value ), Return value is boolean type.  
+This props is array of `validator object` which contains both `error message` and `handler` as properties.  
+Args of the handler is *string value* ( text field value ), Return value is *boolean type*.  
 You can set validator from utilities, or register custom validator by yourself.  
-Indeed, it is possible to confirm validator methods provided here.  
-About using custom validater, please check example.
+Indeed, it is possible to confirm validator methods provided [here](#-validators-).  
+About using custom validater, please check [example](#examples).
 
 ```js
 // One of Error object includes validater and error message.
@@ -137,7 +134,7 @@ Validate whether value contains upper case at least one.
 **isEmail:**
 Validate whether value is formatted of Email address.
 
-**isUrl:**
+**isURL:**
 Validate whether value is formatted of Email address.
 
 ### Examples
@@ -164,6 +161,16 @@ render() {
 }
 
 ```
+**Custom validator sample**  
+check the value of input text is `some text`.
+
+```js
+const customValidator = {
+  message: 'text must be some text.',
+  validator: value => value === 'some text',
+}
+```
+
 
 ### Style
 
