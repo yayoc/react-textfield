@@ -1,2 +1,10 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+
 node_modules
 *.swp
+
+# Build folder
+lib
