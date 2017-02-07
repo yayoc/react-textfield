@@ -2,7 +2,7 @@ import { length,
          isAlphanumeric,
          mustContainUpperCase,
          isEmail,
-         isUrl,
+         isURL,
        } from '../../src/utils/validator';
 
 
@@ -48,14 +48,14 @@ describe('isEmail', () => {
   });
 });
 
-describe('isUrl', () => {
+describe('isURL', () => {
   it('returns true if args is URL format.', () => {
     const testValue = 'http://yayoc.com';
-    expect(isUrl(testValue)).toBeTruthy();
+    expect(isURL(testValue)).toBeTruthy();
   });
   it('returns false if args is not URL format.', () => {
     const testValue = 'yayoc';
-    expect(isUrl(testValue)).toBeFalsy();
+    expect(isURL(testValue)).toBeFalsy();
   });
 });
 
