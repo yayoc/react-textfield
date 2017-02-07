@@ -189,5 +189,10 @@ const style = {
 };
 ``` 
 
+### Tests
+
+`npm test`
+
+
 
 

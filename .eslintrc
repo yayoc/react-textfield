@@ -5,14 +5,16 @@
     "browser": true,
     "node": true,
     "mocha": true,
-    "amd": true
+    "amd": true,
+    "jest": true
   },
   "rules": {
     "func-names": 0,
     "arrow-body-style": 0,
     "no-param-reassign": [2, {
       "props": false
-    }]
+    }],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
   },
   "settings": {
     "import/resolver": "node"

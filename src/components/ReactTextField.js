@@ -44,23 +44,17 @@ export default class ReactTextField extends React.Component {
     }
   }
 
-  // TODO: Refactoring
-
   validate(value) {
-    let errorMessage = null;
-    let isValid = true;
+    const errors = this.props.validators.filter((v) => {
+      return v.validator && !v.validator(value);
+    });
 
-    for (const err of this.props.validators) {
-      if (!err.validator) {
-        continue;
-      }
-      if (!err.validator(value)) {
-        errorMessage = err.message;
-        isValid = false;
-        break;
-      }
-    }
-    this.setState({ isValid, errorMessage }, () => {
+    const err = errors.length > 0 ? errors[0] : null;
+    const newState = err
+      ? { isValid: false, errorMessage: err.message }
+      : { isValid: true, errorMessage: null };
+
+    this.setState(newState, () => {
       if (this.props.afterValidate) {
         this.props.afterValidate(this.state.isValid, this.props.name);
       }
