@@ -20,6 +20,7 @@ module.exports = {
     path: './lib/components/',
     filename: '[name].js',
     library: 'ReactTextField',
+    libraryTarget: 'commonjs2',
   },
   module: {
     preLoaders: [

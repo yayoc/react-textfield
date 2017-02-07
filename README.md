@@ -39,7 +39,7 @@ npm install --save react-textfield
 
 #### Include component
 ```js
-import { TextField } from 'react-textfield';
+import { TextField, validator } from 'react-textfield';
 ```
 
 #### Make some elegant textfield
@@ -143,15 +143,15 @@ render() {
   const usernameValidators = [
     {
       message: 'Username must be 4 - 12 characters',
-      validator: value => length(value, { min: 4, max: 12 }),
+      validator: value => validator.length(value, { min: 4, max: 12 }),
     },
     {
       message: 'Username must be alphanumeric.',
-      validator: value => isAlphanumeric(value),
+      validator: value => validator.isAlphanumeric(value),
     },
   ];
 
-  <TextField
+  <ReactTextField
     name="username"
     placeholder="username"
     validators={usernameValidators}
