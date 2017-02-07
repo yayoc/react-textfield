@@ -4,6 +4,7 @@
   "description": "Elegant text filed of React Component.",
   "main": "index.js",
   "scripts": {
+    "prepublish": "npm run build",
     "build": "npm run clean && npm run build:js && webpack",
     "build:js": "babel src/ -d lib/ --ignore src/components",
     "clean": "rimraf lib",
