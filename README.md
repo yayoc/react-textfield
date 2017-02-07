@@ -1,7 +1,8 @@
-# react-textfield <sup>[![npm version](https://badge.fury.io/js/react-textfield.svg)](https://badge.fury.io/js/react-textfield)</sup>
-
+# react-textfield <sup>
+[![npm version](https://badge.fury.io/js/react-textfield.svg)](https://badge.fury.io/js/react-textfield)
 [![Build Status](https://travis-ci.org/yayoc/react-textfield.svg?branch=master)](https://travis-ci.org/yayoc/react-textfield)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)</sup>
+
 [![NPM](https://nodei.co/npm/react-textfield.png)](https://nodei.co/npm/react-textfield/)
 
 ![react-textfield in demo](https://raw.githubusercontent.com/yayoc/react-textfield/master/react-textfield-demo.gif)
