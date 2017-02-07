@@ -1,12 +1,24 @@
-var path = require('path');
-var webpack = require('webpack');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
+const path = require('path');
+const fs = require('fs');
 
-module.exports = [{
-  entry: './index.js',
+const srcFolder = path.join(__dirname, 'src', 'components');
+const components = fs.readdirSync(srcFolder);
+
+const files = [];
+const entries = {};
+components.forEach(component => {
+  const name = component.split('.')[0];
+  const file = `./src/components/${name}`;
+  files.push(file);
+  entries[name] = file;
+});
+
+
+module.exports = {
+  entry: entries,
   output: {
-    path: path.join(__dirname, 'public'),
-    filename: 'bundle.js',
+    path: './lib/components/',
+    filename: '[name].js',
     library: 'ReactTextField',
   },
   module: {
@@ -36,4 +48,4 @@ module.exports = [{
     inline: true,
     historyApiFallback: true,
   },
-}];
+};

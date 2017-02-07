@@ -4,7 +4,7 @@
   "description": "Elegant text filed of React Component.",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && npm run build:js",
+    "build": "npm run clean && npm run build:js && webpack",
     "build:js": "babel src/ -d lib/ --ignore src/components",
     "clean": "rimraf lib",
     "storybook": "start-storybook -p 9001 -s ./public",
@@ -18,7 +18,7 @@
   "keywords": [
     "react"
   ],
-  "author": "yayoc",
+  "author": "yayoc <hi@yayoc.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/yayoc/react-textfield/issues"
