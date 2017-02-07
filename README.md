@@ -1,12 +1,11 @@
-# react-textfield <sup>[![Version Badge][npm-version-svg]][package-url]</sup>
+# react-textfield <sup>[![npm version](https://badge.fury.io/js/react-textfield.svg)](https://badge.fury.io/js/react-textfield)</sup>
 
-[![Build Status][travis-svg]][travis-url]
-[![dependency status][deps-svg]][deps-url]
-[![dev dependency status][dev-deps-svg]][dev-deps-url]
-[![License][license-image]][license-url]
-[![Downloads][downloads-image]][downloads-url]
+[![Build Status](https://travis-ci.org/yayoc/react-textfield.svg?branch=master)](https://travis-ci.org/yayoc/react-textfield)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![NPM](https://nodei.co/npm/react-textfield.png)](https://nodei.co/npm/react-textfield/)
 
-[![npm badge][npm-badge-png]][package-url]
+![react-textfield in demo](https://raw.githubusercontent.com/yayoc/react-textfield/master/react-textfield-demo.gif)
+
 
 > Elegant textfield of React Component.
 
