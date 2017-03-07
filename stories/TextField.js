@@ -66,6 +66,15 @@ storiesOf('TextField', module)
       validateOnBlur={true}
     />
   ))
+  .addWithInfo('Add default Value', () => (
+    <TextFieldWrapper
+      label="Username"
+      defaultValue="yayoc"
+      type="text"
+      validators={usernameValidators}
+      successMessage="This Username is available."
+    />
+  ))
   .addWithInfo('Override style', () => (
     <TextFieldWrapper
       label="Username"

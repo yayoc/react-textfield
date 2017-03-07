@@ -11,18 +11,28 @@ export default class ReactTextField extends React.Component {
       errorMessage: null,
 
       isValid: false,
+
+      value: props.defaultValue,
     };
     this.onChange = this.onChange.bind(this);
     this.onBlur = this.onBlur.bind(this);
     this.onFocus = this.onFocus.bind(this);
   }
 
+  componentDidMount() {
+    if (this.state.value !== null) {
+      this.validate(this.state.value);
+    }
+  }
+
   onChange(e) {
+    const value = e.target.value;
+    this.setState({ value });
+
     if (this.props.onChange) {
       this.props.onChange(e, this.props.name);
     }
     if (!this.props.validateOnBlur) {
-      const value = e.target.value;
       this.validate(value);
     }
   }
@@ -70,6 +80,7 @@ export default class ReactTextField extends React.Component {
         <input
           name={this.props.name}
           type={this.props.type}
+          value={this.state.value}
           className="ReactTextField--input"
           onChange={this.onChange}
           onBlur={this.onBlur}
@@ -109,6 +120,8 @@ ReactTextField.propTypes = {
 
   name: PropTypes.string.isRequired,
 
+  defaultValue: PropTypes.string,
+
   placeholder: PropTypes.string,
 
   // Success message when validator passed.
@@ -140,6 +153,7 @@ ReactTextField.propTypes = {
 ReactTextField.defaultProps = {
   type: 'text',
   name: '',
+  defaultValue: null,
   placeholder: '',
   validators: [],
   validateOnBlur: false,
