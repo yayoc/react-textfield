@@ -12,7 +12,7 @@
 
 ## Live Playground
 
-For examples of the datepicker in action, go to http://blog.yayoc.com/react-textfield.
+For examples of the react-textfield in action, go to http://blog.yayoc.com/react-textfield.
 
 OR
 
