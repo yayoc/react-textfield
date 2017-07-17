@@ -1,6 +1,6 @@
 {
   "name": "react-textfield",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Elegant text filed of React Component.",
   "main": "index.js",
   "scripts": {
@@ -59,7 +59,7 @@
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2",
-	"webpack-babel-jest": "*",
+    "webpack-babel-jest": "*",
     "rimraf": "^2.5.4"
   },
   "precommit": [],
@@ -70,6 +70,6 @@
   },
   "jest": {
     "scriptPreprocessor": "<rootDir>/node_modules/webpack-babel-jest",
-	"testRegex": "(/__tests__/.*|\\.(test|spec))\\.(es6|js|json)$"
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(es6|js|json)$"
   }
 }
