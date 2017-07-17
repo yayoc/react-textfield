@@ -153,7 +153,7 @@ ReactTextField.propTypes = {
 ReactTextField.defaultProps = {
   type: 'text',
   name: '',
-  defaultValue: null,
+  defaultValue: '',
   placeholder: '',
   validators: [],
   validateOnBlur: false,
